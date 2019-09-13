@@ -1,0 +1,21 @@
+version: '3.1'
+
+services:
+
+  database:
+    image: postgres:9
+    restart: always
+    environment:
+      POSTGRES_USER: solutis
+      POSTGRES_PASSWORD: solutis
+    ports:
+      - 5432:5432
+
+  adminer:
+    image: dpage/pgadmin4
+    restart: always
+    environment:
+      PGADMIN_DEFAULT_EMAIL: admin
+      PGADMIN_DEFAULT_PASSWORD: admin
+    ports:
+      - 8000:80
